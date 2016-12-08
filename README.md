@@ -2,7 +2,7 @@
 
 ## Overview
 
-* This application uses google maps api to display locations and information about several historical & amusement places in Hyderabad, Telangana.
+* This application uses google maps API & foursquare API to display locations and information about several historical & amusement parks in Hyderabad, Telangana.
 
 * The application is under progress, new features will be added regularly. Suggestions are highly appreciated.
 
@@ -11,10 +11,12 @@
 * After the webpage loads click 'show locations' button.
 * Click any marker on the map to show details.
 * Browse other locations using the 'zoom' button around Hyderabad city.
+* filter the search.
+
 
 ## Running the app
 
-Check this link for live version of my map. https://samtopper.github.io/N-Map-MVO/
+Check this link for live version of my map. https://samtopper.github.io/N-Map-MVVM
 
 ## Resources
 
