@@ -16,7 +16,7 @@
 
 ## Running the app
 
-Check this link for live version of my map. https://samtopper.github.io/N-Map-MVVM
+Check this link for live version of my map. https://samtopper.github.io/N-Map-NVVM/
 
 ## Resources
 
