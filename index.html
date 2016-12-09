@@ -7,45 +7,34 @@
   </head>
 
   <body>
+
+    <div><h1>Historical Places in Hyderabad.</h1></div>
     <div class="container">
+
       <div class="options-box">
-        <h1>Search your place to visit.</h1>
 
         <div>
           <input id="show-locations" type="button" value="Show locations">
           <input id="hide-locations" type="button" value="Hide Locations">
         </div>
-
         <hr>
 
         <form data-bind="submit: visiblePlaces">
-          <p>Places List:</p>
 
-          <input placeholder="type here..." type="search" name="filter" data-bind="value: filter, valueUpdate: 'keyup'" autocomplete="off">
+          <label for="mysearch">Enter your search location here: </label>
+          <input id="mysearch" type="search" placeholder="type here..."
+          data-bind="value: filter, valueUpdate: 'keyup'" autocomplete="on"/>
 
-          <ul data-bind="template: {name:'title', foreach: model}"></ul>
-
-          <select multiple="multiple" width="100" data-bind="options: items, optionsText:'title'"> </select>
+          <ul data-bind="foreach: model">
+            <li data-bind="text: title, click: "></li>
+          </ul>
 
         </form>
-
-        <hr>
-        <div>
-          <p>Zoom your favorite location in hyderabad below.</p>
-          <input id="zoom-to-area-text" type="text" placeholder="Enter your favorite area!">
-          <input id="zoom-to-area" type="button" value="Zoom">
-        </div>
-
-
-
-
-
 
       </div>
 
       <div id="map"></div>
     </div>
-
 
     <script src="js/libs/knockout.js"></script>
     <script src="js/libs/jQuery.js"></script>

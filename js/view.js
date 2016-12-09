@@ -35,15 +35,12 @@ var locationsView = {
             marker.addListener('click', function() {
                 ViewModel.populateInfoWindow(this, largeInfowindow);
                 //call ajax here
-                ViewModel.RequestAJAX();
-                marker.toggleBounce();
+                ViewModel.requestAJAX();
+                ViewModel.toggleBounce();
             });
 
             document.getElementById('show-locations').addEventListener('click', ViewModel.showListings);
             document.getElementById('hide-locations').addEventListener('click', ViewModel.hideListings);
-            document.getElementById('zoom-to-area').addEventListener('click', function() {
-                ViewModel.zoomToArea();
-            });
         }
     }
 };
@@ -60,17 +57,10 @@ var SimpleListModel = function(items) {
 
     this.visiblePlaces = ko.computed(function(){
        return this.places().filter(function(place){
-           if(!self.filter() || place.name.toLowerCase().indexOf(self.filter().toLowerCase()) !== -1)
+           if(!self.filter() || place.title.toLowerCase().indexOf(self.filter().toLowerCase()) !== -1)
              return place;
        });
    },this);
 }
 
 ko.applyBindings(new SimpleListModel(model) );
-
-
-
-
-
-// //start
-// ViewModel.init();

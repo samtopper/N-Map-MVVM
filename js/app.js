@@ -24,22 +24,21 @@ var ViewModel = {
             // $wikiElem.text("failed to get wikipedia resources.");
             console.log("failed to get resources");
         }, 8000);
-
-        var fsquare_id = 'K3QM5R5HR0FLEUVDY2EU5PWVXL5TAGAC2EAKLVJ5UVZHSSDA';
-        var fsquare_secret = 'BU5ATIO30ETMIMAUGWVCXLBZGIMDQJAZ1ASLKT5NVURXS01W';
     },
 
     requestAJAX: function() {
+        var fsquare_id = 'K3QM5R5HR0FLEUVDY2EU5PWVXL5TAGAC2EAKLVJ5UVZHSSDA';
+        var fsquare_secret = 'BU5ATIO30ETMIMAUGWVCXLBZGIMDQJAZ1ASLKT5NVURXS01W';
         model.forEach(function(item){
             $.ajax({
                 url: 'https://api.foursquare.com/v2/venues/explore',
                 dataType: 'jsonp',
                 type: "GET",
                 cache: 'false',
-                data: 'limit=1&ll=' + item.location.lat + ',' + item.location.lng + '&query=' + item.title + '&client_id=' + fsquare_id + '&client_secret=' + fsquare_secret + '&v=20140806&m=foursquare',
+                data: 'limit=1&ll=' + item.location.lat + ',' + item.location.lng + '&query=' + item.title + '&client_id=' + fsquare_id + '&client_secret=' + fsquare_secret + '&v=20140806&m=foursquare'
             }).done(function(data){
                 item.rating = data.response.groups[0].items[0].venue.rating;
-                console.log(data);
+                console.log(data.response);
                 if (!item.rating) {
                     item.rating = 'No rating in foursquare';
                 }
@@ -63,38 +62,6 @@ var ViewModel = {
             new google.maps.Point(10, 34),
             new google.maps.Size(21, 34));
         return markerImage;
-    },
-
-    // This function takes the input value in the find nearby area text input
-    // locates it, and then zooms into that area. This is so that the user can
-    // show all listings, then decide to focus on one area of the map.
-    zoomToArea: function() {
-        // Initialize the geocoder.
-        var geocoder = new google.maps.Geocoder();
-        // Get the address or place that the user entered.
-        var address = document.getElementById('zoom-to-area-text').value;
-        // Make sure the address isn't blank.
-        if (address === '') {
-            window.alert('You must enter an area, or address.');
-        } else {
-            // Geocode the address/area entered to get the center. Then, center the map
-            // on it and zoom in
-            geocoder.geocode({
-                address: address,
-                componentRestrictions: {
-                    locality: 'Hyderabad'
-                }
-            }, function(results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    map.setCenter(results[0].geometry.location);
-                    map.setZoom(15);
-                } else {
-
-                  window.alert('We could not find that location - try entering a more' +
-                        ' specific place.');
-                }
-            });
-        }
     },
 
     // This function populates the infowindow when the marker is clicked.

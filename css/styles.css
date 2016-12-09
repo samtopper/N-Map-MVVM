@@ -10,19 +10,19 @@ body {
 }
 
 .container {
-height: 100%;
-position: relative;
+    height: 100%;
+    position: relative;
 }
 
 input {
-font-size: 12px;
+    font-size: 12px;
 }
 
 h1 {
-color: #525454;
-font-size: 22px;
-margin: 0 0 10px 0;
-text-align: center;
+    color: #525454;
+    font-size: 22px;
+    margin: 0 0 10px 0;
+    text-align: center;
 }
 
 #hide-locations,
@@ -30,27 +30,27 @@ text-align: center;
     width: 48%;
 }
 
-#search {
+#mysearch {
     width: 80%;
 }
 
 #map {
-bottom:0px;
-height: 100%;
-left: 220px;
-position: absolute;
-right: 0px;
+    bottom:0px;
+    height: 100%;
+    left: 280px;
+    position: absolute;
+    right: 0px;
 }
 
 .options-box {
-background: #AEB59D;
-border: 1px solid #999;
-border-radius: 3px;
-height: 100%;
-line-height: 35px;
-padding: 10px 10px 30px 10px;
-text-align: left;
-width: 215px;
+    background: #AEB59D;
+    border: 1px solid #999;
+    border-radius: 3px;
+    height: 100%;
+    line-height: 35px;
+    padding: 10px 10px 30px 10px;
+    text-align: left;
+    width: 275px;
 }
 
 #zoom-to-area-text {
@@ -61,16 +61,3 @@ width: 215px;
 #zoom-to-area {
     width: 24%;
 }
-
-select {
-    height: 200px;
-    width: 150px;
-}
-
-select > option {
-    margin: 4px;
-    background-color: pink;
-}
-
-
-
